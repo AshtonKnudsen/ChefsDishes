@@ -1,0 +1,20 @@
+@using ChefsDishes.Models;
+@model Chef;
+
+<h1>Add A New Chef!</h1>
+
+<form asp-action="Chefprocessor" method="POST" asp-controller="Home">
+    <label asp-for="firstname">Chefs First Name</label>
+    <input type="text" name="firstname">
+    <label asp-for="lastname">Chefs Last Name</label>
+    <input type="text" name="lastname">
+    <label asp-for="birthday">Chefs Birthday</label>
+    <input type="date" name="birthday"><br>
+    <input type="submit"> <input type="reset">
+</form>
+
+
+
+
+
+<a href="chefs"><button>Back to Chefs</button></a>

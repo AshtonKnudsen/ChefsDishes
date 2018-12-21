@@ -1,0 +1,28 @@
+@using ChefsDishes.Models;
+@model Dish;
+
+<h1>Dishes || <a href="chefs">Chefs</a></h1>
+<a href="adddish">Add a New Dish</a>
+
+<h3>Here are all of our listed Dishes</h3>
+
+<table style="width:75%;">
+    <tr>
+        <th>Name of Dish</th>
+        <th>Chef Who Made it</th>
+        <th>Tastiness</th>
+        <th>Calories</th>
+    </tr>
+    @{
+        foreach(var dish in ViewBag.dishes)
+        {
+            <tr>
+                <td>@dish.name</td>
+                <td>@dish.Chefwhomade.firstname</td>
+                <td>@dish.tastiness</td>
+                <td>@dish.calories</td>
+            </tr>
+        }
+    }
+</table>
+<!-- Disshishey Loops stuffs -->

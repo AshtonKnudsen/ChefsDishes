@@ -1,0 +1,27 @@
+@using ChefsDishes.Models;
+@model Chef;
+
+<h1><a href="/">Dishes</a> || Chefs</h1>
+<a href="addchef">Add a New Chef</a>
+
+<h3>Here are all of our registered Chefs</h3>
+
+<table style="width:75%;">
+    <tr>
+        <th>Chefs Name</th>
+        <th>Age</th>
+        <th>Number of Dishes</th>
+    </tr>
+    @{
+        foreach(var c in ViewBag.chefs)
+        {
+            <tr>
+                <td>@c.firstname @c.lastname </td>
+                <td>@((int.Parse(DateTime.Now.ToString("yyyyMMdd"))-int.Parse(@c.birthday.ToString("yyyyMMdd")))/ 10000)</td>
+                <td>@c.dish.Count</td>
+            </tr>
+        }
+    }
+</table>
+
+<!-- chef loop things -->
